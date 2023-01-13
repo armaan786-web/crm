@@ -1,0 +1,121 @@
+{% extends 'base/base.html' %}
+{% block content %}
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <div class="header-icon">
+        <i class="fa fa-paypal"></i>
+    </div>
+    <div class="header-title">
+        <h1>Client Recharge payment Report</h1>
+        <small>Client Recharge payment details</small>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-bd lobidrag">
+                <div class="panel-heading">
+                    <div class="btn-group" id="buttonexport">
+                        <h4>Client Recharge payment</h4>
+                        {% comment %} <a href="#">
+                            <h4>Client payment</h4>
+                        </a> {% endcomment %}
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                    <div class="btn-group">
+                        <button class="btn btn-exp btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Table Data</button>
+                        <ul class="dropdown-menu exp-drop" role="menu">
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false'});"> 
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});">
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON (ignoreColumn)</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'true'});">
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON (with Escape)</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'xml',escape:'false'});">
+                        <img src="assets/dist/img/xml.png" width="24" alt="logo"> XML</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'sql'});"> 
+                        <img src="assets/dist/img/sql.png" width="24" alt="logo"> SQL</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'csv',escape:'false'});"> 
+                        <img src="assets/dist/img/csv.png" width="24" alt="logo"> CSV</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'txt',escape:'false'});"> 
+                        <img src="assets/dist/img/txt.png" width="24" alt="logo"> TXT</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'excel',escape:'false'});"> 
+                        <img src="assets/dist/img/xls.png" width="24" alt="logo"> XLS</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'doc',escape:'false'});">
+                        <img src="assets/dist/img/word.png" width="24" alt="logo"> Word</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'powerpoint',escape:'false'});"> 
+                        <img src="assets/dist/img/ppt.png" width="24" alt="logo"> PowerPoint</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'png',escape:'false'});"> 
+                        <img src="assets/dist/img/png.png" width="24" alt="logo"> PNG</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"> 
+                        <img src="assets/dist/img/pdf.png" width="24" alt="logo"> PDF</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                    <div class="table-responsive">
+                        <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr class="info">
+                                    <th>Poduct Image</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    {% comment %} <th>Recharge Amount</th> {% endcomment %}
+                                    {% comment %} <th>Balance due</th>  {% endcomment %}
+                                    <th>Description</th>
+                                    <th>Duration</th>
+                                    <th>Commission</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in booking %}
+                                <tr>
+                                    <td><img src="{{i.product.product_img.url}}" class="img-circle" alt="User Image" width="50" height="50"> </td>
+                                    
+                                    <td>{{i.product.name}}</td>
+                                    <td>{{i.product.price}}</td>
+                                    {% comment %} <td>$ 195.00</td> {% endcomment %}
+                                    <td>{{i.product.description}}</td>
+                                    <td>{{i.product.duration}} Days</td>
+                                    <td>{{i.product.commission}} %</td>
+                                    
+                                </tr>
+                                {% endfor %}
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+{% endblock content %}

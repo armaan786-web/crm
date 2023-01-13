@@ -1,0 +1,123 @@
+{% extends 'base/base.html' %}
+{% block content %}
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <div class="header-icon">
+        <i class="fa fa-paypal"></i>
+    </div>
+    <div class="header-title">
+        <h1>Client Withdraw payment Report</h1>
+        <small>Client Withdraw payment details</small>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-bd lobidrag">
+                <div class="panel-heading">
+                    <div class="btn-group" id="buttonexport">
+                        <h4>Client Withdraw payment</h4>
+                        {% comment %} <a href="#">
+                            <h4>Client payment</h4>
+                        </a> {% endcomment %}
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                    <div class="btn-group">
+                        <button class="btn btn-exp btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> Export Table Data</button>
+                        <ul class="dropdown-menu exp-drop" role="menu">
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false'});"> 
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'false',ignoreColumn:'[2,3]'});">
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON (ignoreColumn)</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'json',escape:'true'});">
+                        <img src="assets/dist/img/json.png" width="24" alt="logo"> JSON (with Escape)</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'xml',escape:'false'});">
+                        <img src="assets/dist/img/xml.png" width="24" alt="logo"> XML</a>
+                            </li>
+                            <li><a href="#" onclick="$('#dataTableExample1').tableExport({type:'sql'});"> 
+                        <img src="assets/dist/img/sql.png" width="24" alt="logo"> SQL</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'csv',escape:'false'});"> 
+                        <img src="assets/dist/img/csv.png" width="24" alt="logo"> CSV</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'txt',escape:'false'});"> 
+                        <img src="assets/dist/img/txt.png" width="24" alt="logo"> TXT</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'excel',escape:'false'});"> 
+                        <img src="assets/dist/img/xls.png" width="24" alt="logo"> XLS</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'doc',escape:'false'});">
+                        <img src="assets/dist/img/word.png" width="24" alt="logo"> Word</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'powerpoint',escape:'false'});"> 
+                        <img src="assets/dist/img/ppt.png" width="24" alt="logo"> PowerPoint</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'png',escape:'false'});"> 
+                        <img src="assets/dist/img/png.png" width="24" alt="logo"> PNG</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="$('#dataTableExample1').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"> 
+                        <img src="assets/dist/img/pdf.png" width="24" alt="logo"> PDF</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- ./Plugin content:powerpoint,txt,pdf,png,word,xl -->
+                    <div class="table-responsive">
+                        <table id="dataTableExample1" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr class="info">
+                                    <th>Invoice No.</th>
+                                    <th>Invoice date</th>
+                                    <th>Invoice amount</th>
+                                    <th>Balance due</th>
+                                    <th>Due date</th>
+                                    <th>status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV 654</td>
+                                    <td>02/06/2017</td>
+                                    <td>$ 1,954.00</td>
+                                    <td>$ 195.00</td>
+                                    <td>02/06/2017</td>
+                                    <td><span class="label-warning label label-default">draft</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>INV 958</td>
+                                    <td>02/06/2017</td>
+                                    <td>$ 1,954.00</td>
+                                    <td>$ 195.00</td>
+                                    <td>02/06/2017</td>
+                                    <td><span class="label-custom label label-default">paid</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+{% endblock content %}

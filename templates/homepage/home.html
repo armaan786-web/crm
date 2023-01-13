@@ -1,0 +1,343 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <div class="header-icon">
+        <i class="fa fa-dashboard"></i>
+    </div>
+    <div class="header-title">
+        <h1>CRM Admin Dashboard</h1>
+        <small>Very detailed & featured admin.</small>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        {% if user.is_superuser == 1 %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox1">
+                <div class="statistic-box">
+                    
+                    <i class="fa fa-user-plus fa-3x"></i>
+                    
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Users</h3>
+                </div>
+            </div>
+        </div>
+        
+        {% comment %} <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox2">
+                <div class="statistic-box">
+                    <i class="fa fa-user-secret fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">4</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Active Admin</h3>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox3">
+                <div class="statistic-box">
+                    <i class="fa fa-money fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <i class="fa fa-rupee"></i><span class="count-number"> 965</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Recharge Amount</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox3">
+                <div class="statistic-box">
+                    <i class="fa fa-money fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <i class="fa fa-rupee"></i><span class="count-number"> 965</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Withdraw Amount</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox4">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Orders</h3>
+                </div>
+            </div>
+        </div>
+        
+        {% elif user.is_superuser != 1 %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox4">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Recharge</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox4">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Wallet</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox4">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Products</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox4">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        <span class="count-number">11</span>
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Total Recharge</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox5">
+                <div class="statistic-box" >
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        {% comment %} <span class="count-number">11</span> {% endcomment %}
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    {% comment %} <button class="btn btn-add md-trigger m-b-5 m-r-2" data-modal="modal-10"><H3></H3></button> {% endcomment %}
+                    
+                    <h3 class=" md-trigger m-b-5 m-r-2" data-modal="modal-10"> Recharge</h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div id="cardbox6">
+                <div class="statistic-box">
+                    <i class="fa fa-files-o fa-3x"></i>
+                    <div class="counter-number pull-right">
+                        {% comment %} <span class="count-number">11</span> {% endcomment %}
+                        <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                  </span>
+                    </div>
+                    <h3> Wallet</h3>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+
+       
+    </div>
+    {% if user.is_superuser != 1 %}
+    <center><h1>Products</h1></center>
+    <hr>
+    <div class=" mt-5">
+
+        <div class="row">
+            {% for i in product %}
+            <div class="col-md-3">
+
+
+
+                <div class="card" style="width: 25rem;">
+
+                    <div class="image-container">
+
+                        <img style="width:100%" src="{{i.product_img.url}}" class="img-fluid rounded thumbnail-image">
+
+
+                    </div>
+                    <hr>
+
+
+                    <div class="product-detail-container p-2">
+
+                        <div  class="d-flex justify-content-between align-items-center">
+                            <div style = "padding-right:1rem;text-align: right; font-size: 20px; color:red;" class="d-flex flex-column mb-2">
+
+                                {% comment %} <span  class="new-price">Rs {{i.price}}</span> {% endcomment %}
+                                <small class="old-price text-right">Rs {{i.price}}</small>
+                            </div>
+
+                            <p style="padding-left:2rem; font-size: 40px;" class="dress-name">{{i.description}}</p>
+
+                            <div style = "display:flex; flex-column;" class="d-flex flex-column mb-2">
+
+                                {% comment %} <span  class="new-price">Rs {{i.price}}</span> {% endcomment %}
+                                {% comment %} <small class="old-price text-right">$5.99</small> {% endcomment %}
+                            </div>
+
+                        </div>
+
+
+                       
+
+                        <div class="d-flex justify-content-between align-items-center pt-1" style="background:#009688; height:5rem; text-align:center; padding: 10px;">
+                            
+
+                            <span class="buy" style="color:white;  font-size:20px;"> <strong>BUY</strong> +</span>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div> 
+    {% endif %}
+
+  
+
+    
+    
+    
+  
+    <!-- /.row -->
+    <div class="md-modal md-effect-10" id="modal-10">
+        <div class="md-content">
+            <h3>Choose Payment Gateway</h3>
+            {% comment %} <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div id="cardbox4">
+                        <div class="statistic-box">
+                            <i class="fa fa-files-o fa-3x"></i>
+                            <div class="counter-number pull-right">
+                                <span class="count-number">11</span>
+                                <span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+                          </span>
+                            </div>
+                            <h3> Total Recharge</h3>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+                
+                <div style="background:#f7f9fa; display:flex; justify-content:space-around; align-items:center;">
+                <div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img src="{% static 'cards/images/phonepay2.png' %}" alt="dd" style="width:100%"></div>
+                <div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img src="{% static 'cards/images/paytm.jpg' %}" alt="dd" style="width:100%"></div>
+                {% comment %} <div style="display:flex;" class="card">dd</div>  {% endcomment %}
+            </div>
+           
+            <div class="n-modal-body">
+                <p>This is a Recharge window. You can do the following things with it:</p>
+                <ul>
+                    <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+                    <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+                    <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                </ul>
+                <button class="btn btn-add md-close">Close me!</button>
+            </div>
+        </div>
+    </div>
+   
+</section>
+
+
+
+
+<!-- /.content -->
+
+
+{% endblock content %}

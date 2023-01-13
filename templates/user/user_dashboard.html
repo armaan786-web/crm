@@ -1,0 +1,538 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<div class="header-icon">
+		<i class="fa fa-dashboard"></i>
+	</div>
+	<div class="header-title">
+		<h1>CRM Admin Dashboard</h1>
+		<small>Very detailed & featured admin.</small>
+	</div>
+</section>
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		{% if user.is_superuser == 1 %}
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox1">
+				<div class="statistic-box">
+
+					<i class="fa fa-user-plus fa-3x"></i>
+
+					<div class="counter-number pull-right">
+						<span class="count-number">11</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Total Users</h3>
+				</div>
+			</div>
+		</div>
+
+		{% comment %} <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox2">
+				<div class="statistic-box">
+					<i class="fa fa-user-secret fa-3x"></i>
+					<div class="counter-number pull-right">
+						<span class="count-number">4</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Active Admin</h3>
+				</div>
+			</div>
+		</div> {% endcomment %}
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox3">
+				<div class="statistic-box">
+					<i class="fa fa-money fa-3x"></i>
+					<div class="counter-number pull-right">
+						<i class="fa fa-rupee"></i><span class="count-number"> 965</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Recharge Amount</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox3">
+				<div class="statistic-box">
+					<i class="fa fa-money fa-3x"></i>
+					<div class="counter-number pull-right">
+						<i class="fa fa-rupee"></i><span class="count-number"> 965</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Withdraw Amount</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox4">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						<span class="count-number">11</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Total Orders</h3>
+				</div>
+			</div>
+		</div>
+
+		{% elif user.is_superuser != 1 %}
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox4">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						
+						<span class="count-number">Rs {{total_amount}}</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3>Recharge wallet</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox4">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						<span class="count-number">11</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3>Balance Wallet</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox4">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						<span class="count-number">11</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Products</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox4">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						<span class="count-number">11</span>
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Teams</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox5">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						{% comment %} <span class="count-number">11</span> {% endcomment %}
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					{% comment %} <button class="btn btn-add md-trigger m-b-5 m-r-2" data-modal="modal-10">
+						<H3></H3>
+					</button> {% endcomment %}
+
+					<h3 class=" md-trigger m-b-5 m-r-2" data-modal="modal-10"> Recharge</h3>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+			<div id="cardbox6">
+				<div class="statistic-box">
+					<i class="fa fa-files-o fa-3x"></i>
+					<div class="counter-number pull-right">
+						{% comment %} <span class="count-number">11</span> {% endcomment %}
+						<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+						</span>
+					</div>
+					<h3> Withdraw</h3>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+
+
+	</div>
+	{% if user.is_superuser != 1 %}
+	<center>
+		<h1>Products</h1>
+	</center>
+	<hr>
+	<div class=" mt-5">
+
+		<div class="row">
+			{% for i in product %}
+			<div class="col-md-3">
+
+
+
+				<div class="card" style="width: 25rem;">
+
+					<div class="image-container">
+
+						<img style="width:100%" src="{{i.product_img.url}}" class="img-fluid rounded thumbnail-image">
+
+
+					</div>
+					<hr>
+
+					<form action="{% url 'booking' %}">
+						<div class="product-detail-container p-2">
+
+							<div class="d-flex justify-content-between align-items-center">
+								<div style="padding-right:1rem;text-align: right; font-size: 20px; color:red;"
+									class="d-flex flex-column mb-2">
+
+									{% comment %} <span class="new-price">Rs {{i.price}}</span> {% endcomment %}
+									<small class="old-price text-right">Rs {{i.price}}</small>
+									<input type="hidden" value="{{i.id}}" id="prod_id" name="prod_id">
+								</div>
+
+								<p style="padding-left:2rem; font-size: 40px;" class="dress-name">{{i.description}}</p>
+
+								<div style="display:flex; flex-column;" class="d-flex flex-column mb-2">
+
+									{% comment %} <span class="new-price">Rs {{i.price}}</span> {% endcomment %}
+									{% comment %} <small class="old-price text-right">$5.99</small> {% endcomment %}
+								</div>
+
+							</div>
+
+
+
+
+							<div class="d-flex justify-content-between align-items-center pt-1"
+								style="background:#009688; height:5rem; text-align:center; padding: 10px;">
+								<input style="background:#009688; color:white; font-size:20px; border:none;" type="submit" value="Book">
+
+								{% comment %} <button class="buy">ff</button> {% endcomment %}
+								{% comment %} <span class="buy" style="color:white;  font-size:20px;"> <strong>BUY</strong> +</span> {% endcomment %}
+
+							</div>
+
+
+
+						</div>
+				</form>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+			{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+	</div>
+	{% endif %}
+
+
+
+
+
+
+
+	<!-- /.row -->
+	<div class="md-modal md-effect-10" id="modal-10">
+		<div class="md-content">
+			{% comment %} <h3>Choose Payment Gateway</h3> {% endcomment %}
+			{% comment %} <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+					<div id="cardbox4">
+						<div class="statistic-box">
+							<i class="fa fa-files-o fa-3x"></i>
+							<div class="counter-number pull-right">
+								<span class="count-number">11</span>
+								<span class="slight"><i class="fa fa-play fa-rotate-270"> </i>
+								</span>
+							</div>
+							<h3> Total Recharge</h3>
+						</div>
+					</div>
+				</div>
+			</div> {% endcomment %}
+
+			<div style="background:#f7f9fa; display:flex; justify-content:space-around; align-items:center;">
+				<div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img
+						src="{% static 'cards/images/phonepay2.png' %}" alt="dd" style="width:100%"></div>
+				<div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img
+						src="{% static 'cards/images/paytm.jpg' %}" alt="dd" style="width:100%"></div>
+				<div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img
+						src="{% static 'cards/images/gpay2.png' %}" alt="dd" style="width:100%"></div>
+				{% comment %} <div style="margin-top:20px;display:flex; width:25%; height:7rem;" class="card"><img
+						src="{% static 'cards/images/gpay.png' %}" alt="dd" style="width:100%"></div> {% endcomment %}
+				{% comment %} <div style="display:flex;" class="card">dd</div> {% endcomment %}
+			</div>
+
+			{% comment %} <section class="content">
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+						<div class="panel panel-bd lobidisable">
+							<div class="panel-heading">
+								<div class="panel-title">
+									<h4>Square skin</h4>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="skin-square">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="i-check">
+												<input tabindex="9" type="checkbox" id="square-checkbox-1">
+												<label for="square-checkbox-1">Checkbox 1</label>
+											</div>
+											<div class="i-check">
+												<input tabindex="10" type="checkbox" id="square-checkbox-2" checked>
+												<label for="square-checkbox-2">Checkbox 2</label>
+											</div>
+											<div class="i-check">
+												<input type="checkbox" id="square-checkbox-disabled" disabled>
+												<label for="square-checkbox-disabled">Disabled</label>
+											</div>
+											<div class="i-check">
+												<input type="checkbox" id="square-checkbox-disabled-checked" checked
+													disabled>
+												<label for="square-checkbox-disabled-checked">Disabled &amp;
+													checked</label>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="i-check">
+												<input tabindex="11" type="radio" id="square-radio-1"
+													name="square-radio">
+												<label for="square-radio-1">Radio button 1</label>
+											</div>
+											<div class="i-check">
+												<input tabindex="12" type="radio" id="square-radio-2"
+													name="square-radio" checked>
+												<label for="square-radio-2">Radio button 2</label>
+											</div>
+											<div class="i-check">
+												<input type="radio" id="square-radio-disabled" disabled>
+												<label for="square-radio-disabled">Disabled</label>
+											</div>
+											<div class="i-check">
+												<input type="radio" id="square-radio-disabled-checked" checked disabled>
+												<label for="square-radio-disabled-checked">Disabled &amp;
+													checked</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</section> {% endcomment %}
+			<div class="" style="display:flex; justify-content:space-around; align-items:center;">
+				<div class="i-check">
+					<input tabindex="11" type="radio" id="square-radio-1" name="square-radio"  value="999" checked/>
+					<label for="square-radio-1">999</label>
+				</div>
+				<div class="i-check">
+					<input tabindex="12" type="radio" id="square-radio-2" name="square-radio"  value="5999"/>
+					<label for="square-radio-2">5,999</label>
+				</div>
+				<div class="i-check">
+					<input tabindex="12" type="radio" id="square-radio-2" name="square-radio"  value="9999"/>
+					<label for="square-radio-2">9,999</label>
+				</div>
+				
+				{% comment %} <div class="i-check">
+					<input type="radio" id="square-radio-disabled-checked" checked disabled>
+					<label for="square-radio-disabled-checked">Disabled &amp; checked</label>
+				</div> {% endcomment %}
+			</div>
+
+			<div class="n-modal-body">
+				<form method="POST">
+					{% csrf_token %}
+					<div class="row" style="border:1px solid grey;">
+						<div  class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="form-group">
+								<label>Recharge Amount</label>
+								<input  class="form-control" type="text" id="result" name="amount" readonly>
+							</div>
+
+						</div>
+						<div  class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="form-group">
+								<label>Payment Method</label>
+								<select  id="upi_id" class="form-control" onChange="update()" name="payment_method">
+									<option>SELECT</option>
+									{% for i in upi_gateway %}
+									<option value="{{i.upi_number}}">{{i.select_upi}}</option>
+									{% endfor %}
+
+								</select>
+							</div>
+
+						</div>
+
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="form-group">
+								<label>Upi ID</label>
+								<input type="text" class="form-control" placeholder="Enter First Name" id="value" name="upi_id" readonly required>
+							</div>
+						</div>
+						<div  class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<div class="form-group">
+								<label>Open your upi app pay now</label>
+								{% comment %} <input type="text" class="form-control" placeholder="Enter First Name" id="value" readonly required> {% endcomment %}
+							</div>
+						</div>
+						<div  class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+							<div class="form-group">
+								<label>Submit Reference Number</label>
+								<input type="text" class="form-control" placeholder="Reference Number" name="reference_number" required>
+							</div>
+						</div>
+						<div style="">
+						
+							
+							<button type="Submit" style="margin-top:2px;" class="btn btn-info ">Submit</button>
+						</div>
+					</div>
+				</form>
+					
+
+					
+					
+				
+				<div style="display:flex; justify-content:space-between; align-items:center;">
+					
+						
+						<button style="margin-top:2px;" class="btn btn-add md-close">Close me!</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</section>
+
+
+<script type="text/javascript">
+	function update() {
+		var select = document.getElementById('upi_id');
+		var option = select.options[select.selectedIndex];
+
+		document.getElementById('value').value = option.value;
+		document.getElementById('text').value = option.text;
+	}
+
+	update();
+</script>
+<script type="text/javascript">
+	function update2() {
+		var select = document.getElementById('upi_id');
+		var option = select.options[select.selectedIndex];
+
+		document.getElementById('value').value = option.value;
+		document.getElementById('text').value = option.text;
+	}
+
+	update();
+</script>
+
+
+<script>
+	let radioBtns = document.querySelectorAll("input[name='square-radio']")
+	let result = document.getElementById("result")
+	let findSelected = ()=>{
+		let selected = document.querySelector("input[name='square-radio']:checked").value;
+		//console.log(selected);
+		document.getElementById("result").value = selected;
+		
+		
+		//result.textContent = `value of selected radidddo button: ${selected}`
+	}
+	radioBtns.forEach(radioBtn =>{
+		radioBtn.addEventListener("change",findSelected);
+	})
+	findSelected();
+</script>
+
+
+
+
+<!-- /.content -->
+
+
+{% endblock content %}
